@@ -2,7 +2,7 @@
 /* IMPORTANTE: mude este número a cada deploy que altera index.html/CSS/JS —
    sem isso, quem já visitou o site continua preso no cache antigo, mesmo
    depois do servidor ter a versão corrigida. */
-const CACHE = 'tutor-fiscal-v2';
+const CACHE = 'tutor-fiscal-v3';
 const SHELL = [
   './',
   './index.html',
