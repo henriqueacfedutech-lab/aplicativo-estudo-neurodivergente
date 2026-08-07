@@ -1,0 +1,155 @@
+════════════════════════════════════════════════════
+TUTOR FISCAL — VERSAO PORTATIL PARA WINDOWS
+════════════════════════════════════════════════════
+
+Aplicativo de estudo para concursos fiscais (Receita
+Federal e área fiscal estadual), construído sobre a
+Teoria da Carga Cognitiva de John Sweller e adaptado
+para perfil AuDHD com TPAC.
+
+────────────────────────────────────────────────────
+USAR (2 cliques, sem instalação)
+────────────────────────────────────────────────────
+
+1. Extraia este ZIP para uma pasta fixa, por exemplo
+   C:\TutorFiscal (não execute de dentro do ZIP).
+
+2. Dê dois cliques em "Iniciar Tutor Fiscal.bat".
+   O app abre em janela própria, sem barra de navegador,
+   pelo Edge ou Chrome.
+
+3. Opcional: botão direito no .bat → "Enviar para" →
+   "Área de trabalho (criar atalho)".
+
+Observação: o Windows pode avisar sobre o arquivo .bat.
+Ele apenas abre o navegador em modo aplicativo; você
+pode conferir o conteúdo no Bloco de Notas.
+
+════════════════════════════════════════════════════
+DIFERENÇAS NO COMPUTADOR
+════════════════════════════════════════════════════
+
+• Barra lateral fixa em vez de barra inferior.
+• Em telas largas, o quadro de apoio fica aberto ao
+  lado da sessão (painel duplo) — o artigo e a questão
+  no mesmo campo de visão, sem alternar de tela.
+• Atalhos: teclas 1 e 2 respondem à pergunta socrática;
+  Enter confirma o cálculo do exercício.
+• Sincronização automática de arquivo disponível
+  (Chrome ou Edge) — veja abaixo.
+
+════════════════════════════════════════════════════
+COMO O APP FUNCIONA
+════════════════════════════════════════════════════
+
+CINCO ÁREAS, uma decisão por vez:
+
+• HOJE — mostra UMA matéria: a da vez no seu ciclo,
+  com o tópico atual e um único botão de ação.
+• CICLO — seus blocos (Nível 1, 2, 3). Ao concluir uma
+  matéria de um bloco, a próxima vem do bloco seguinte.
+  Em "Editar blocos" você reordena e move matérias.
+• REVISÃO — banco de questões extraído dos seus PDFs
+  e matérias com teoria concluída, com intervalos que
+  crescem no acerto e encurtam no erro.
+• PAINEL — horas de foco, histórico, domínio por
+  disciplina, material gerado, backup e sincronização.
+• AJUSTES — tema (claro/escuro), banca, modo de estudo,
+  ciclo de foco, PDFs e cadernos, disciplinas, IA.
+
+CICLO DE UMA SESSÃO
+  Check-in de regulação → caso resolvido passo a passo
+  → pergunta socrática → exercício com apoio decrescente
+  → pausa obrigatória de 3 minutos.
+
+TRÊS NÍVEIS POR TÓPICO
+  Nível 1: resolução inteira à vista.
+  Nível 2: você completa o passo final.
+  Nível 3: resolve do zero, sem apoio.
+
+DOIS MODOS
+  Aprendizado (passo a passo) e Prática (sem andaimes,
+  direto ao resgate). Migração automática acima de 70%
+  de acerto em matéria com teoria concluída.
+
+SEUS PDFs (Ajustes, em Cadernos e materiais)
+  Extração automática de questões com gabarito para o
+  banco de revisão, e indexação de trechos para consulta
+  durante a sessão.
+
+ESTÚDIO DE ESQUEMAS
+  Converte trechos do PDF em diagramas: sequência, mapa
+  mental, propriedades, comparação, cascata. Com ou sem
+  IA. O diagrama vira ficha permanente do tópico.
+
+CARD DE LEI UNIFICADO
+  Artigo, regra, prazos e exceções, jurisprudência e uma
+  questão numa tela só. Cores: verde = regra geral,
+  âmbar = prazo ou exceção, azul = STF/STJ.
+
+GLOSSÁRIO
+  Busca de termos no quadro de apoio durante a sessão.
+
+════════════════════════════════════════════════════
+INTELIGÊNCIA ARTIFICIAL (opcional)
+════════════════════════════════════════════════════
+
+O app funciona sem IA: banco interno de casos, extração
+de questões, estúdio manual, níveis, revisão e cards
+montados à mão.
+
+A IA serve para o que exige interpretar texto: casos
+novos, cards de lei a partir do PDF e escolha automática
+da estrutura de um esquema.
+
+Ativar: Ajustes → Motor de IA → API → cole a chave de
+console.anthropic.com. Fica só neste computador.
+
+ECONOMIA DE TOKENS
+  • Casos gerados em lotes de 3 — uma chamada rende
+    três sessões do tópico.
+  • Todo material gerado é guardado e reaproveitado
+    sem novo custo.
+  • O app avisa quando já existe card ou esquema antes
+    de gastar tokens para gerar outro.
+  • Painel → Material gerado mostra chamadas feitas e
+    reaproveitamentos.
+  • Defina um limite de gasto em console.anthropic.com.
+
+════════════════════════════════════════════════════
+SEUS DADOS E SINCRONIZAÇÃO
+════════════════════════════════════════════════════
+
+Ficam neste computador, sem conta e sem nuvem.
+
+SINCRONIZAÇÃO AUTOMÁTICA (recomendada)
+  Painel → Sincronização automática → escolha um arquivo
+  dentro da sua pasta do Google Drive ou OneDrive
+  (ex.: tutor-fiscal-sync.json). O app grava nele a cada
+  alteração e lê ao abrir. Em outro computador, aponte
+  o mesmo arquivo.
+  Observação: se o app foi instalado pelo Setup e o
+  seletor de arquivos não abrir, use a versão hospedada
+  (GitHub Pages) ou o backup manual.
+
+BACKUP MANUAL
+  Painel → Exportar backup gera um arquivo com tudo:
+  progresso, blocos, questões, cards, esquemas e
+  material gerado. Importe no celular ou em outro PC.
+
+Sobrevive a: fechar, reiniciar, reinstalar o app.
+Não sobrevive a: limpar dados do navegador.
+
+════════════════════════════════════════════════════
+PRIMEIROS PASSOS
+════════════════════════════════════════════════════
+
+1. Abra pelo atalho e faça o check-in de regulação.
+2. Ajustes → Aparência: tema claro ou escuro.
+3. Ciclo: confira os blocos e a ordem das matérias.
+4. Ajustes → Cadernos e materiais: envie um PDF de
+   questões e veja quantas o app extrai.
+5. Painel: ative a sincronização automática.
+6. Hoje: Estudar agora, e complete um ciclo até a pausa.
+
+Bons estudos.

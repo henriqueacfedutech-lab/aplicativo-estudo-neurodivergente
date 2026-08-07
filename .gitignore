@@ -1,0 +1,13 @@
+# Supabase local
+supabase/.branches
+supabase/.temp
+
+# Companheiro visual de brainstorming (mockups temporários)
+.superpowers/
+
+# Chaves/segredos nunca versionados (embora hoje só existam no navegador)
+.env
+.env.local
+
+# Config local do Claude Code (skills etc.) — não é parte do app
+.claude/
