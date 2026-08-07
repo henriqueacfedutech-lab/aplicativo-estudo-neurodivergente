@@ -40,6 +40,13 @@ O app está publicado e acessível de qualquer navegador/dispositivo, incluindo 
 - Branch `master` = código-fonte completo do projeto (mesma estrutura desta pasta).
 - Branch `gh-pages` = **só** os 5 arquivos publicados (`index.html`, `manifest.webmanifest`, `sw.js`, `icone-192.png`, `icone-512.png`, cópia de `tutor-fiscal-windows/`), na raiz. GitHub Pages publica sozinho a cada `git push` nela — não precisa de passo manual nem GitHub Actions.
 - **Dado importante:** a versão web (`https://henriqueacfedutech-lab.github.io/...`) e a versão local (`file://...`) são origens diferentes pro navegador — `localStorage` (progresso, PDFs, chave de API) **não sincroniza sozinho** entre as duas. Usar a sincronização Drive/OneDrive do app, ou exportar/importar backup manual, se precisar levar dado de um lado pro outro.
+- **`sw.js` tem cache agressivo (cache-first).** A constante `CACHE` no topo do arquivo **precisa subir de versão a cada deploy** que muda `index.html`/CSS/JS — sem isso, quem já visitou o site fica preso na versão antiga em cache, mesmo com o servidor já atualizado (aconteceu de verdade em 2026-08-07: um fix foi publicado mas ninguém via ele até a versão do cache subir). Depois de subir a versão, o navegador ainda pode levar 1-2 recarregamentos + alguns minutos de propagação de CDN do GitHub Pages pra pegar a versão nova.
+
+## Bug real encontrado e corrigido (2026-08-07)
+
+Usuário reportou "nada funciona" no site publicado — investigado a fundo, causa raiz confirmada: `setCheckin()` (tutor-fiscal.html, função que processa o check-in inicial) referenciava `document.getElementById('hoje-msg')`, um elemento que **nunca existia no HTML**. O `TypeError` resultante interrompia a função antes de `go('hoje')` rodar — travava o app inteiro na primeira tela, pra qualquer usuário, sempre. Mesma classe de bug (referência a ID inexistente) em `renderBase()` (`#hoje-base-sub`/`#hoje-base-pill`, tinha guarda então só virava recurso morto, não crash) e em `go('sessao')` (`nav-sessao` sem guarda, ao contrário do padrão já usado no resto da função). Os 3 elementos que faltavam foram adicionados ao HTML (nos dois arquivos) e a guarda que faltava foi adicionada. Verificado ao vivo, em aba limpa: check-in → Hoje → Estudar agora → pergunta socrática → par de desvanecimento → nível 2, e Estúdio/Ficha visual, tudo sem erro de console.
+
+**Lição pra não repetir:** ao adicionar/editar qualquer `document.getElementById('X')`, confirmar que `id="X"` existe de fato no HTML — uma varredura rápida (`getElementById` referenciados vs. `id=` definidos) pega esse tipo de bug em segundos e deveria virar hábito antes de declarar uma mudança pronta.
 
 ## Mapa do arquivo-fonte (tutor-fiscal.html, ~3400 linhas)
 
