@@ -293,6 +293,12 @@ textarea:focus{outline:2px solid var(--verde); outline-offset:1px;}
     <h1>Hoje</h1>
     <span id="hoje-estado" class="pill verde">Regulado</span>
   </div>
+  <p class="sub mt1" id="hoje-msg"></p>
+
+  <div class="card mt2 spread" id="hoje-base">
+    <span class="sub" id="hoje-base-sub">Nenhum PDF enviado — casos vêm do banco interno</span>
+    <span class="pill cinza" id="hoje-base-pill">Enviar</span>
+  </div>
 
   <div class="card mt3 hid" id="guia">
     <p class="eyebrow">Como o app funciona</p>
@@ -2326,7 +2332,7 @@ function go(id){
       `<div class="card"><b>Nenhuma sessão ativa.</b><p class="sub mt1">Comece pela tela Hoje: o plano indica a disciplina e o tópico da vez.</p><button class="btn primary mt2" onclick="iniciarSessao()">Iniciar sessão agora</button></div>`;
     document.getElementById('sess-acoes').innerHTML='';
     document.querySelectorAll('#nav button').forEach(b=>b.classList.remove('on'));
-    document.getElementById('nav-sessao').classList.add('on');
+    const nbs = document.getElementById('nav-sessao'); if(nbs) nbs.classList.add('on');
     return;
   }
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));
