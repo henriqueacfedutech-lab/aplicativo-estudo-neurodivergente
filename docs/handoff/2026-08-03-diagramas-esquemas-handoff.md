@@ -1,6 +1,18 @@
 # Handoff — Redesenho do subsistema de Diagramas e Esquemas
 
 **Status:** SUPERADO por `docs/superpowers/specs/2026-08-05-diagramas-esquemas-base-conhecimento-design.md` — sessão continuada em outro dispositivo fundiu este subprojeto com Base de Conhecimento e migrou a arquitetura pra Supabase (motivo: possível venda do app para empresa). Este arquivo fica só como registro histórico do diagnóstico original. Leia o spec de 05/08 e seus 5 planos em `docs/superpowers/plans/2026-08-05-*.md` antes de continuar qualquer trabalho de diagramas.
+
+> **Atualização (sessão seguinte):** app publicado no GitHub Pages — **https://henriqueacfedutech-lab.github.io/aplicativo-estudo-neurodivergente/** (branch `gh-pages`, atualiza sozinha a cada push nela; código-fonte fica em `master`). PWA instalável no Android via "Adicionar à tela inicial". Repo: `github.com/henriqueacfedutech-lab/aplicativo-estudo-neurodivergente`, público.
+>
+> **Prioridade explícita do usuário:** ele precisa começar a estudar logo — segue usando o app publicado (já funcional: cards, questões, ciclo, revisão) enquanto a reforma de Diagramas/Base de Conhecimento continua em paralelo, **sem pressa artificial**. Não tratar o spec de 05/08 como bloqueante para o uso do app.
+>
+> **Revisão do spec de 05/08 — respostas coletadas (faltava só isso pro "usuário revisa" formal):**
+> - Fichas manuais legadas (Regência e crase, DRE, Interpretação de texto): **descartar** — não migrar, deixar a IA regerar quando esses tópicos forem acessados no novo sistema.
+> - Método de login Supabase Auth: **e-mail + senha** (não magic link).
+> - Motivo de negócio (possível venda do app pra empresa) que justifica RLS multi-tenant desde o início: **confirmado, ainda válido**.
+> - Custo operacional do Supabase (não discutido no spec original): **não é bloqueio agora** — usuário quer um modelo real funcionando primeiro, avalia custo depois se virar problema.
+>
+> Com essas 4 respostas, o spec de 05/08 está formalmente revisado e pronto pra virar trabalho de implementação (os 5 planos já escritos) — só falta decidir *quando* retomar, dado que não há pressa.
 **Onde parou:** aguardando reação do usuário aos mockups visuais (link abaixo). Ele vai continuar pelo celular, então qualquer sessão nova (desktop ou mobile) deve ler este arquivo primeiro.
 **Ler também:** `../../CLAUDE.md` (contexto geral do app, sempre a fonte de verdade sobre onde tudo está).
 

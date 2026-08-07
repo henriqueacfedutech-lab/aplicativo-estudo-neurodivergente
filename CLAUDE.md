@@ -2,7 +2,8 @@
 
 > Leia este arquivo antes de mexer em qualquer coisa. Ele existe pra continuar o trabalho em qualquer chat/sessão nova sem perder contexto. Atualize-o ao final de cada sessão relevante.
 
-> **⏸ Spec escrito (2026-08-05), aguardando revisão do usuário. Nenhum código alterado ainda.** Redesenho de Diagramas e Esquemas + Base de Conhecimento (fundidos num só subprojeto, migrando para Supabase). Spec completo em `docs/superpowers/specs/2026-08-05-diagramas-esquemas-base-conhecimento-design.md`. Usuário disse que vai revisar no futuro — **não avançar para `writing-plans` até ele aprovar o spec explicitamente.** Histórico do brainstorming (diagnóstico original, mockups) em `docs/handoff/2026-08-03-diagramas-esquemas-handoff.md`.
+> **⏸ Spec de 2026-08-05 REVISADO pelo usuário (respostas coletadas), nenhum código do Supabase escrito ainda.** Redesenho de Diagramas e Esquemas + Base de Conhecimento (fundidos, migrando para Supabase). Spec em `docs/superpowers/specs/2026-08-05-diagramas-esquemas-base-conhecimento-design.md`, 4 pontos em aberto resolvidos (fichas legadas descartadas, login e-mail+senha, motivo de negócio confirmado, custo Supabase não é bloqueio) — decisões registradas em `docs/handoff/2026-08-03-diagramas-esquemas-handoff.md`. 5 planos já escritos em `docs/superpowers/plans/2026-08-05-*.md`, prontos pra implementação.
+> **Prioridade explícita do usuário: sem pressa nisso.** Ele precisa estudar logo e vai usar o app publicado (abaixo) como está — essa reforma segue em paralelo, sem bloquear o uso.
 
 ## O que é o app
 
@@ -28,7 +29,17 @@ C:\Users\henri\Documents\Claude Code\Aplicativo_Estudo_Neurodivergente\   ← pa
 
 **Regra crítica:** `tutor-fiscal.html` e `tutor-fiscal-windows\index.html` são dois arquivos separados com o mesmo conteúdo. **Toda edição de código em um precisa ser replicada manualmente no outro** (só existe uma diferença intencional entre eles: a linha do `<link rel="manifest">` — o fonte usa data-URI inline, a cópia distribuída referencia `manifest.webmanifest`). Não existe build step automático — já aconteceu de esquecer isso e os dois desalinharem.
 
-Anteriormente existiam mais duas formas de instalação (`TutorFiscal-Setup\` instalador .exe, `tutor-fiscal-instalacao\` PWA via GitHub Pages) — **foram removidas em 2026-08-02** a pedido do usuário pra simplificar. Não recriar sem pedido explícito.
+Anteriormente existia mais uma forma de instalação (`TutorFiscal-Setup\` instalador .exe) — **foi removida em 2026-08-02** a pedido do usuário pra simplificar. Não recriar sem pedido explícito.
+
+## Publicação na web (GitHub Pages)
+
+O app está publicado e acessível de qualquer navegador/dispositivo, incluindo instalável como PWA no Android ("Adicionar à tela inicial"):
+
+- **Site ao vivo:** https://henriqueacfedutech-lab.github.io/aplicativo-estudo-neurodivergente/
+- **Repositório:** `github.com/henriqueacfedutech-lab/aplicativo-estudo-neurodivergente` (público)
+- Branch `master` = código-fonte completo do projeto (mesma estrutura desta pasta).
+- Branch `gh-pages` = **só** os 5 arquivos publicados (`index.html`, `manifest.webmanifest`, `sw.js`, `icone-192.png`, `icone-512.png`, cópia de `tutor-fiscal-windows/`), na raiz. GitHub Pages publica sozinho a cada `git push` nela — não precisa de passo manual nem GitHub Actions.
+- **Dado importante:** a versão web (`https://henriqueacfedutech-lab.github.io/...`) e a versão local (`file://...`) são origens diferentes pro navegador — `localStorage` (progresso, PDFs, chave de API) **não sincroniza sozinho** entre as duas. Usar a sincronização Drive/OneDrive do app, ou exportar/importar backup manual, se precisar levar dado de um lado pro outro.
 
 ## Mapa do arquivo-fonte (tutor-fiscal.html, ~3400 linhas)
 
